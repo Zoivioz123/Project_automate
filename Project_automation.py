@@ -28,12 +28,21 @@ def install_myself():
             subprocess.run(["pip", "install", "-r", "requirements.txt"], check=True)
 
         print("Everything is installed")
+        remove_myself()
+        exit(0)
     except Exception as err:
         print(f"Unable to install: {err}")
 
 
 def run():
-    subprocess.run(["python", "./main.py"], check=True)
+    main_dir = os.path.dirname(os.path.abspath(__file__))
+    main = os.path.join(main_dir, "main.py")
+
+    subprocess.run(["python", main], check=True)
+
+
+def remove_myself():
+    os.remove(os.path.abspath(__file__))
 
 
 if os.path.exists(".dev"):
