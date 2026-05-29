@@ -5,8 +5,6 @@ import os
 import platform
 import shutil
 import subprocess
-import sys
-from typing import Dict, List
 
 from nicegui import ui
 
@@ -96,7 +94,7 @@ def create_offer(config: dict, offer_id: str, project_name: str, customer: str):
 
             ui.notify("Project structure created successfully!", type="positive")
 
-    except FileExistsError as err:
+    except FileExistsError:
         ui.notify("This offer folder already exists!", type="negative")
     except Exception as err:
         ui.notify(f"Error: {str(err)}", type="negative")
