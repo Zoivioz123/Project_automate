@@ -20,7 +20,7 @@ def load_conf(conf_path):
     try:
         with open(conf_path, "r", encoding="utf8") as file:
             response = json.load(file)
-            print("[INF] Config file loaded successfully")
+            print(f"[INF] Loaded {args.config}")
             return response
     except Exception as err:
         print("[ERR] Unable to load config file: " + str(err))
@@ -187,11 +187,8 @@ def create_offer_gui(config):
 args = get_args()
 config = load_conf(args.config)
 
-# Clear args for NiceGUI
-sys.argv = [sys.argv[0]]
-
 offer_id_input, project_name_input, customer_selection, new_customer_input = (
     create_offer_gui(config)
 )
 
-ui.run()
+ui.run(reload=False)

@@ -32,6 +32,17 @@ def install_myself():
         print(f"Unable to install: {err}")
 
 
+def run():
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    config_dev = os.path.join(script_dir, "config_dev.json")
+
+    if os.path.exists(config_dev):
+        print("Loading from config_dev.json")
+        subprocess.run(["python", "./main.py", "-c", config_dev], check=True)
+    else:
+        subprocess.run(["python", "./main.py"], check=True)
+
+
 if os.path.exists(".dev"):
     if os.path.exists(".dev"):
         print("Dev mode is enabled \nUpdate skiped")
@@ -42,4 +53,4 @@ else:
     else:
         install_myself()
 
-os.system("python ./main.py")
+run()

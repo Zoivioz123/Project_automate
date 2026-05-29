@@ -1,0 +1,23 @@
+{
+  "template_path": "",
+  "offers_path": "",
+
+  "open_folder_after_create": true,
+
+  "folder_structure": "{offers_path}/{customer}/{year}/{offer_id}-{project_name}",
+
+  "renames": [
+    {
+      "src": "00-SALES/XXX-NAZOV_PROJEKTU.gdoc",
+      "dst": "00-SALES/{offer_id}-{project_name}.gdoc"
+    },
+    {
+      "src": "00-SALES/XXX-NAZOV_PROJEKTU.gsheet",
+      "dst": "00-SALES/{offer_id}-{project_name}.gsheet"
+    },
+    {
+      "src": "01-PROJECT SPECIFICATION/XXX-OPERATING INSTRUCTIONS.gdoc",
+      "dst": "01-PROJECT SPECIFICATION/{offer_id}-OPERATING INSTRUCTIONS.gdoc"
+    }
+  ]
+}
