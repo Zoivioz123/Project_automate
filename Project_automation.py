@@ -20,7 +20,7 @@ def install_myself():
     print("Installing myself from Git")
     try:
         subprocess.run(
-            ["git", "clone", "git@github.com:Zoivioz123/Project_automate.git"],
+            ["git", "clone", "https://github.com/Zoivioz123/Project_automate.git"],
             check=True,
         )
 
